@@ -15,36 +15,35 @@
         </div>
     </header>
     <main>
-        <h3>Minhas Tarefas</h3>
-        <ul>
-            <li>
-                <h5>Acordar</h5>
-                <p>Fazer café, e preparar as meninas para escola</p>
-            </li>
-            <li>
-                <h5>Aula</h5>
-                <p>Levar as meninas para escola e Ir para o curso de FullStack</p>
-            </li>
-            <li>
-                <h5>Comer</h5>
-                <p>Preprar o almoço e lanches </p>
-            </li>
-            <li>
-                <h5>Atividade das meninas</h5>
-                <p>Natação e Aula de ginástica</p>
-            </li>
-            <li>
-                <h5>Jantar</h5>
-                <p>Preprar o Jantar</p>
-            </li>
-            <li>
-                <h5>Estudar</h5>
-                <p>Depois que todos dormem</p>
-            </li>
-        </ul>
-    </main>
+        <h3>
+            Minhas Atividades
+        <button onclick="novaAtividade()">Nova Atividade</button>
+        </h3>
+        <ul id="lista"></ul>
+           
+     </main>
 
+    <div id="overlay" onclick="fecharModal()"></div>
+    <div id="modal">
+      <form id="criar" onsubmit="adicionarAtividade()">
+        <h3>Nova Atividade <box-icon name="x" onclick="fecharModal()"></box-icon></h3>
+        <label for="titulo">Titulo</label>
+        <input type="text" id="titulo" placeholder="Digite o titulo" required></input>
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" placeholder="Descreva"></textarea>
+        <button type="submit">Criar</button>
+      </form>
 
+      <div id="confirmacao">
+        <h3>Alerta <box-icon name="x" onclick="fecharModal()"></box-icon></h3>
+        <p>Deseja realmente excluir esta atividade?</p>
+        <div class="acoes">
+        <button onclick="fecharModal()">Cancelar</button>
+        <button onclick="deletarAtividade()">Confirmar</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/index.js"></script>
-</body>
+  </body>
 </html>
